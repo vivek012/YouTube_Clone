@@ -1,15 +1,16 @@
-import Header from "@/components/ui/Header";
-import Sidebar from "@/components/ui/Sidebar";
-
+import CategoryTabs from "@/components/ui/category-tabs";
+import Videogrid from "@/components/ui/Videogrid";
+import { Suspense } from "react";
 
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-black">
-     <Header/>
-     <div className="flex">
-        <Sidebar/>
-     </div>
-    </div>
-  );
+    <main className="flex-1 p-4">
+      <CategoryTabs />
+      <Suspense fallback={<div>Loading Videos....</div>}>
+        <Videogrid />
+      </Suspense>
+    </main>
+  )
+
 }
