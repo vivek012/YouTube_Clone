@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
-import authRouter from "./auth/authController";
+import authRouter from "./auth/authRouter";
+
 
 
 
@@ -14,6 +15,8 @@ app.get("/", (_req, res) => {
   res.send("API is running");
 });
 
-app.use("/api/auth", authRouter);
+app.use("/api/user", authRouter)
+
+
 
 export default app;
