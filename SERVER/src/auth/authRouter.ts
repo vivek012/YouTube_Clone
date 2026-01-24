@@ -5,7 +5,7 @@ import {login , updateProfile}from "./authController";
 const authRouter = Router();
 
 authRouter.post("/login", login);
-authRouter.put("/update-profile", updateProfile)
+authRouter.patch("/update-profile/:id", updateProfile)
 
 
 export default authRouter;
